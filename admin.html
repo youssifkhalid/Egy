@@ -21,31 +21,49 @@
     </header>
     <main>
         <h2>لوحة التحكم</h2>
-        <form id="upload-form">
-            <label for="video-title">عنوان الفيديو:</label>
-            <input type="text" id="video-title" required>
+        <div id="login-form">
+            <h3>تسجيل الدخول</h3>
+            <form id="admin-login-form">
+                <label for="phone">رقم الهاتف:</label>
+                <input type="tel" id="phone" required>
 
-            <label for="video-url">رابط الفيديو:</label>
-            <input type="url" id="video-url" required>
+                <label for="password">كلمة المرور:</label>
+                <input type="password" id="password" required>
 
-            <label for="video-description">وصف الفيديو:</label>
-            <textarea id="video-description" required></textarea>
+                <button type="submit">تسجيل الدخول</button>
+            </form>
+        </div>
+        <div id="admin-panel" style="display: none;">
+            <h3>إضافة فيديو جديد</h3>
+            <form id="upload-form">
+                <label for="video-title">عنوان الفيديو:</label>
+                <input type="text" id="video-title" required>
 
-            <label for="video-category">الفئة:</label>
-            <select id="video-category" required>
-                <option value="">اختر الفئة</option>
-                <option value="movies">أفلام</option>
-                <option value="cartoons">كرتون</option>
-                <option value="sports">كرة القدم</option>
-            </select>
+                <label for="video-url">رابط الفيديو:</label>
+                <input type="url" id="video-url" required>
 
-            <label for="video-subcategory">التصنيف الفرعي:</label>
-            <select id="video-subcategory">
-                <option value="">اختر التصنيف الفرعي</option>
-            </select>
+                <label for="video-description">وصف الفيديو:</label>
+                <textarea id="video-description" required></textarea>
 
-            <button type="submit">رفع الفيديو</button>
-        </form>
+                <label for="video-category">الفئة:</label>
+                <select id="video-category" required>
+                    <option value="">اختر الفئة</option>
+                    <option value="movies">أفلام</option>
+                    <option value="cartoons">كرتون</option>
+                    <option value="sports">كرة القدم</option>
+                </select>
+
+                <label for="video-subcategory">التصنيف الفرعي:</label>
+                <select id="video-subcategory">
+                    <option value="">اختر التصنيف الفرعي</option>
+                </select>
+
+                <button type="submit">رفع الفيديو</button>
+            </form>
+
+            <h3>إدارة الفيديوهات</h3>
+            <div id="video-management"></div>
+        </div>
     </main>
     <footer>
         <p>جميع الحقوق محفوظة &copy; 2023</p>
