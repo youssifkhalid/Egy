@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const videoElement = document.createElement('div');
             videoElement.className = 'video-item';
             videoElement.innerHTML = `
-                <h4>${video.title}</h4>
+                <h3>${video.title}</h3>
                 <p>الفئة: ${video.category}</p>
                 <p>التصنيف الفرعي: ${video.subcategory || 'غير محدد'}</p>
                 <button onclick="deleteVideo(${video.id})">حذف</button>
@@ -85,3 +85,9 @@ document.addEventListener('DOMContentLoaded', function() {
         displayVideos();
     };
 });
+
+function getYouTubeID(url) {
+    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+    const match = url.match(regExp);
+    return (match && match[2].length === 11) ? match[2] : null;
+}
